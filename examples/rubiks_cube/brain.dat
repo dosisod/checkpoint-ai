@@ -1,0 +1,51 @@
+brain dump of what might be needed
+
+assume cube data is an array
+
+rules for learning:
+	when a GOOD checkpoint is found, store the start position for that checkpoint
+
+rules for moving:
+	a move cannot result in a cube state that has been used before
+		for each move store the entire cubestate
+		(prevents from infinite loops)
+		if the AI cannot move, step back N moves
+	moves with 2 in it (U2,R2 etc) count as one move
+	all moves are checked before being tested
+		eg, if a move has already been made, dont test it
+	if one move is made, allow for a 2 move
+		eg if a U is made, allow for a U2 later
+		(prevents cases where the )
+
+give it checkpoints:
+	give it a focus (only worry about peices xyz)
+		must store colors as relational (color neutral)
+			set a pattern of relational colors
+	give it a target (only try to get xyz)
+		target can consist of many outcomes
+		AI must know whether it has completed it
+	give it a limit (can only do n moves)
+		stores each attempt in a GOOD and BAD array
+			after each BAD attempt, trace backsteps
+				go back 1 step, change direction
+				if that didnt work, store in bad
+				chose another direction
+				keep going for N times
+			if the attempt is good
+				store in GOOD array
+				go to next checkpoint
+	give it a minimum
+		dont store in GOOD if it takes less then N moves
+			(depends on checkpint maybe?)
+		maybe make the last checkpoint as special?
+			if its special then "parse" the last moveset
+			see what caused the last case to trigger this one
+	give it hint (?)
+		if after N tries, maybe give it the answer
+		maybe give it half of the moves needed
+	check for errors
+		if a GOOD checkpoint messes up a previous one, redo it from last state
+			still store the relation that completed the checkpoint
+
+after checkpoint is done:
+	move to next objective
