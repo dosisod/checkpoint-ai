@@ -1,5 +1,5 @@
-import checkpoint
-import math #used for .copysign()
+from checkpoint_ai import CheckpointAlgo, Checkpoint
+import math
 
 """ faces affected by turning
 W Y G B R O: U
@@ -21,7 +21,7 @@ W Y G B R O: B
 . . . .
 """
 
-class cube:
+class Cube:
 	def __init__(self):
 		#cube is orientated with white up, and red facing user
 		self.cubes=[]
@@ -59,3 +59,9 @@ class cube:
 
 	def relative(self, parent, child): #find where child is relative to parent
 		pass
+
+if __name__=="__main__":
+	AI=CheckpointAlgo([])
+	
+	cube=Cube()
+	print(cube.cubes)

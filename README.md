@@ -1,11 +1,15 @@
 # checkpoint-ai
-Checkpoint-based ML bruteforce algo
+
+Checkpoint-based bruteforce AI
 
 Using predefined checkpoints, let an algorithm find its way through each one
 
-# Goal
-This may have already been done, but with this specific implementation I hope to:
+## Installing
 
-* Create my own basic ML implementation from the ground-up
-* Share useful code that can be used by others
-* Have an easy to maintain and use ML algo
+```
+$ git clone http://github.com/dosisod/checkpoint-ai.git
+$ cd checkpoint_ai
+$ pip3 install -e .
+```
+
+Now `checkpoint_ai` is installed and pointed at the newly created git repo
