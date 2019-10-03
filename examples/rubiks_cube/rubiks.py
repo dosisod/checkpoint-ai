@@ -46,16 +46,18 @@ class Cube:
 		move=move.upper()
 		rotation=self.parse(move)
 
-		#these 3 if's only rotate adjecent sides, not face
-		if (move[0]=="U" or move[0]=="D"):
-			for i in a:
-				pass
+		#tbd
 
 	def parse(self, move): #parse between n2, n, and n'
 		move=move[1:] #removes trailing character
 
-		#would make this many lines but this seems more readable
-		return (1 if move=="" else 2 if move=="2" else -1 if move=="'" else 0)
+		if move=="":
+			return 1 #CW turn
+		elif move=="2":
+			return 2 #2x turn
+		elif move=="'":
+			return -1 #CCW turn
+		return 0
 
 	def convert(self, move): #gets rotation and inverts it depending on face
 		move=move[1:]
