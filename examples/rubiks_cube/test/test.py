@@ -14,9 +14,18 @@ class Test:
 		assert self.cube.parse("F") == self.cube.parse("f") == 1
 		assert self.cube.parse("B'") == self.cube.parse("b'") == -1
 
+	def test_convert(self):
+		assert self.cube.convert("U2") == self.cube.convert("u2") == 2
+		assert self.cube.convert("D") == self.cube.convert("d") == -1
+		assert self.cube.convert("L'") == self.cube.convert("l'") == -1
+		assert self.cube.convert("R2") == self.cube.convert("r2") == -2
+		assert self.cube.convert("F") == self.cube.convert("f") == 1
+		assert self.cube.convert("B'") == self.cube.convert("b'") == 1
+
 if __name__=="__main__":
 	tester=Test()
 
 	tester.test_parse()
+	tester.test_convert()
 
 	print("All tests passed")

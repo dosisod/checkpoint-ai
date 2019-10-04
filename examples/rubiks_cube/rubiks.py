@@ -1,5 +1,4 @@
 from colorama import Back
-import math
 
 from checkpoint_ai import CheckpointAlgo, Checkpoint
 
@@ -60,19 +59,13 @@ class Cube:
 		return 0
 
 	def convert(self, move): #gets rotation and inverts it depending on face
-		move=move[1:]
 		rotation=self.parse(move)
 
+		move=move[0].upper()
 		if move=="D" or move=="R" or move=="B":
-			return int(math.copysign(rotation,-1)) #flips rotation
+			return -1*rotation
 		else:
 			return rotation
-
-	def slice(self, index): #returns a slice (array) of the data that needs rotating
-		pass
-
-	def relative(self, parent, child): #find where child is relative to parent
-		pass
 
 	def display(self): #print the current state of the cube out
 		rows=[] #stores faces to be drawn
