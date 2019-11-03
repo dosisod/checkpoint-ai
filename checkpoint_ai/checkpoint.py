@@ -1,21 +1,19 @@
 class Checkpoint:
-	def __init__(self, data, pattern, limit, minimum):
-		""" init params
-		data     Relevant checkpoint data
-		limit    Run no more then N times
-		minimum  Run at least N times
-		"""
+	""" self params
+	start    stores initial data of checkpoint
+	done     stores whether checkpoint has been completed
+	diffs    state of each iteration between checkpoint init and completion
+	max      maximum number of iterations before termination
+	         when max is -1, max is infinite
+	"""
 
-		self.data=data
-		self.limit=limit
-		self.minimum=minimum
+	start=None
+	done=False
+	diffs=[]
+	max=-1
 
-		self.done=False #whether or not ML is done
-
-		self.good=[] #successful attempts stored here
-		self.bad=[] #unsuccessful attempts stored here
-
-		self.pattern=pattern
-
-	def pattern(self, test): #update current pattern
+	def run(self): #override action to be ran for the checkpoint
 		pass
+
+	def __call__(self): #calling instance will run self.run()
+		self.run()
