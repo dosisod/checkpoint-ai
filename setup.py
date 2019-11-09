@@ -6,6 +6,6 @@ setup(
 	description="Checkpoint-based AI algorithm",
 	license="MIT",
 	packages=["checkpoint_ai"],
-	author="its.dosisod",
+	author="dosisod",
 	url="https://github.com/dosisod/checkpoint-ai"
 )
