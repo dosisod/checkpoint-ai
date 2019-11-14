@@ -16,4 +16,4 @@ class Checkpoint:
 		pass
 
 	def __call__(self): #calling instance will run self.run()
-		self.run()
+		self.diffs.append(self.run())

@@ -12,7 +12,7 @@ class CheckpointAlgo():
 		iter=0
 
 		while True:
-			#run checkpoint if max iter has not been reached and checkpoint is not completed
+			#if able to iterate, and checkpoint is not done, keep running
 			if (iter<cp.max or cp.max==-1) and not cp.done:
 				cp()
 
